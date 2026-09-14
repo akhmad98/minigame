@@ -1,7 +1,81 @@
-$primary-color: #0070f3;
+$primary-color: rgba(36, 33, 69, 1);
+$secondary-color: rgba(249, 248, 243, 1);
+
+* {
+  margin: 0;
+}
 
 body {
   background-color: $primary-color;
-  padding: 10px 20px;
   border: none;
+}
+
+.header_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+  background-color: rgba(249, 248, 243, 1);
+  padding: 0 16px;
+}
+
+.nav_header_logo {
+}
+
+.minigame_logo {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.logo_name {
+  padding: 4px 0;
+  height: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5;
+  color: rgba(36, 33, 69, 1);
+  font-style: bold;
+}
+
+.minigame_logo img {
+  border-radius: 8px;
+  border: 2px solid rgba(36, 33, 69, 1);
+  width: 32px;
+  height: 32px;
+}
+
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border: 2px solid rgba(36, 33, 69, 1);
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  gap: 4px;
+  padding: 6px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.hamburger-btn span {
+  width: 14px;
+  height: 0;
+  border: 1px solid rgba(36, 33, 69, 1);
+}
+
+.navigate {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(249, 248, 243, 1);
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease;
+  z-index: 999;
+  padding: 20px;
 }
