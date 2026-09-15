@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minigame</title>
     <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/navbar/navbar.ts"></script>
 </head>
 <body>
     <header>
@@ -40,9 +41,13 @@
                     </ul>
 
                     <div class="nav_actions">
-                        <button class="btn_login">Log In</button>
-                        <button class="btn_logout">Log Out</button>
-                        <button class="btn_signup">Sign Up</button>
+                        <div id="guest_acts">
+                            <button class="btn_login" id="guests">Log In</button>
+                            <button class="btn_signup" id="guests">Sign Up</button>
+                        </div>
+                        <div id="auth_acts">
+                            <button class="btn_logout" id="auth_acts">Log Out</button>
+                        </div>
                     </div>
                 </nav>
             </div>
