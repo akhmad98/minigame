@@ -160,26 +160,17 @@ body {
   font-weight: 400;
 }
 
-.nav_actions {
-  padding: 0 20px;
+#guest_acts,
+#auth_acts {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  padding: 0 20px;
 }
 
-.nav_actions button {
-  border: 2px solid $white;
-  height: 38px;
-  border-radius: 8px;
-  padding: 4px;
-  background-color: transparent;
-  color: $white;
-  font-weight: 700;
-  line-height: 100%;
-  font-size: 16px;
-}
-
-.nav_actions button {
+.nav_actions button,
+.btn_login,
+.btn_signup {
   border: 2px solid $white;
   height: 38px;
   border-radius: 8px;
