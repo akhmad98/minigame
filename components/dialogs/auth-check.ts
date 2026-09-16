@@ -1,11 +1,12 @@
-import { authService } from "../auth/auth-service";
-import { getElementGenericly } from "../utils/getSelector";
+import { getElementGenericly } from '../../src/utils/getSelector';
+import { authService } from '../../src/auth/auth-service';
 
-function checkAuthActions(): void {
+
+export function checkAuthActions(): void {
     const guestActs = document.getElementById('guest_acts');
     const authActs = document.getElementById('auth_acts');
-    const lougoutBtn = getElementGenericly<HTMLButtonElement>('.btn_logout');
-
+    const lougoutBtn = getElementGenericly<HTMLButtonElement>('.btn_logout');  
+    
     if (!guestActs || !authActs) {
         console.error('Navbar elements missing from DOM');
         return;
@@ -34,5 +35,3 @@ function checkAuthActions(): void {
         window.location.href = '';
     })
 }
-
-document.addEventListener('DOMContentLoaded', checkAuthActions);
