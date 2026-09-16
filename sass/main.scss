@@ -3,6 +3,8 @@ $secondary-color: rgba(249, 248, 243, 1);
 $on-bg-footer: rgba(185, 181, 201, 1);
 $primary-link-color: rgba(255, 208, 43, 1);
 $white: rgba(255, 255, 255, 1);
+$hero-cover: rgba(30, 27, 58, 0.65);
+$text-color: rgba(95, 93, 117, 1);
 
 * {
   box-sizing: border-box;
@@ -192,4 +194,60 @@ body {
 }
 
 .close-btn {
+}
+
+.hero {
+  background:
+    linear-gradient($hero-cover, $hero-cover),
+    url('../assets/hero-cover.png') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $hero-cover;
+  padding: 20px;
+}
+
+.hero_wrapper {
+  width: 100%;
+}
+
+.hero_content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border: 2px solid $primary-color;
+  background-color: $secondary-color;
+  border-radius: 12px;
+  box-shadow: 4px 4px 0px 0px $primary-color;
+  filter: drop-shadow(4px 4px 0px 0px $primary-color);
+}
+
+.hero_title {
+  color: $primary-color;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero_text {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: $text-color;
+}
+
+.browse_btn {
+  display: inline-flex;
+  align-items: center;
+  color: $primary-color;
+  background-color: $primary-link-color;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 2px solid $primary-color;
+  border-radius: 8px;
+  max-width: 140px;
 }
