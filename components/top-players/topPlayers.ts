@@ -1,3 +1,5 @@
+import './topPlayer.scss';
+
 export function topPlayerRender() {
     const body: HTMLBodyElement = document.body as HTMLBodyElement;
 
@@ -5,6 +7,12 @@ export function topPlayerRender() {
     sectTP.className = 'top-players';
     sectTP.innerHTML = `
         <div class="wrapper">
+            <div class="global-heading">
+                <span class="pre-heading"></span>
+                <h2>Top Players</h2>
+            </div>
+            <div class="caraousel">
+            </div>
         </div>
     `;
 

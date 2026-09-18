@@ -8,10 +8,10 @@ import { topPlayerRender } from '../components/top-players/topPlayers';
 import { newsRender } from '../components/news/news';
 import { formFilling } from '../components/form-filling/formFilling';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async (): Promise<void> => {
     headerRender();
     heroRender();
-    newsRender();
+    await newsRender();
     topPlayerRender();
     formFilling();
     footerRender();

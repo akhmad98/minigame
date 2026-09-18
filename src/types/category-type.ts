@@ -1,0 +1,1 @@
+export type GameCategory = 'strategy' | 'farm' | 'puzzle' | 'arcade' | 'card';
