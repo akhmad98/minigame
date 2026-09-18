@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.html",
   "scripts": {
+    "format": "prettier --write \".**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "format:check": "prettier --check \".**/*.{js,jsx,ts,tsx,json,css,md}\"",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint . --max-warnings 0",
-    "format": "prettier --write \"src/**/*.{ts,js,scss,css,json,md}\"",
     "test": "npx lint-staged",
     "prepare": "husky"
   },
