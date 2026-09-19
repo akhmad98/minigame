@@ -1,7 +1,7 @@
-import type { GameSeed } from '../../src/interfaces/IGameSeed';
+import type { GameSeed } from '../../src/interfaces/game-seed';
 import './news.scss';
 import { JSON_URL } from '../../src/constants/shared';
-import { Carousel } from '../../src/classes/Carousel';
+import { Carousel } from '../../src/classes/caraousel';
 
 export async function newsRender(): Promise<void> {
     const body: HTMLBodyElement = document.body as HTMLBodyElement;
@@ -22,6 +22,6 @@ export async function newsRender(): Promise<void> {
         </div>
     `;
 
-    body.appendChild(sectNews);
+    body.append(sectNews);
     new Carousel('.caraousel-container', '.caraousel-track', data.data);
 }
