@@ -8,5 +8,5 @@ export function formFilling() {
         </div>
     `;
 
-    body.appendChild(sectForm);
+    body.append(sectForm);
 }

@@ -1,0 +1,142 @@
+$on-primary: rgba(36, 33, 69, 1);
+$size-2: 12px;
+$white: rgba(255, 255, 255, 1);
+$body-samll: 14px;
+$tertiary: rgba(58, 46, 191, 1);
+$outline: rgba(229, 231, 235, 1);
+$bg: rgba(249, 248, 243, 1);
+$gap: 8px;
+$size-1: 8px;
+
+// global heading h2
+.wrapper {
+  display: flex;
+  padding: $size-2;
+  background-color: rgba(249, 248, 243, 1);
+}
+
+.global-heading {
+  display: flex;
+  align-items: center;
+  gap: $gap;
+  background-color: transparent;
+}
+
+.pre-heading {
+  width: 8px;
+  height: 24px;
+  border: 1.5px solid rgba(36, 33, 69, 1);
+  border-radius: 4px;
+  background-color: rgba(255, 208, 43, 1);
+}
+
+.global-heading h2 {
+  color: rgba(36, 33, 69, 1);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.leaderboard-container {
+  width: 100%;
+  max-width: 378px;
+  border: 2.5px solid $on-primary;
+  box-shadow: 4px 4px 0 0 $on-primary;
+  border-radius: $size-2;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.rank-column {
+  &::before {
+    content: '#';
+  }
+}
+
+.player-column {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  .player-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 2px;
+    border: 1px solid $on-primary;
+  }
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 343px;
+  margin: 0 auto;
+  table-layout: fixed;
+
+  th,
+  td {
+    &:nth-child(1) {
+      width: 15%;
+    }
+    &:nth-child(2) {
+      width: 40%;
+    }
+    &:nth-child(3) {
+      width: 25%;
+    }
+    &:nth-child(4) {
+      width: 20%;
+    }
+  }
+
+  thead {
+    background-color: $tertiary;
+    border-bottom: 1.5px solid $on-primary;
+
+    th {
+      padding: $size-2;
+      font-weight: 800;
+      font-size: $body-samll;
+      text-transform: uppercase;
+      color: $white;
+    }
+  }
+
+  tbody {
+    border-bottom: 1px solid $outline;
+    gap: $gap;
+
+    tr {
+      background-color: $white;
+      &:nth-child(odd) {
+        background-color: $bg;
+      }
+    }
+
+    td {
+      font-family: Roboto;
+      font-weight: 700;
+      font-size: $body-samll;
+      vertical-align: middle;
+      padding: $size-2;
+      text-align: center;
+
+      &:last-child {
+        display: inline-flex;
+        text-align: center;
+        justify-content: start;
+        gap: 2px;
+
+        &::before {
+          fill: yellow;
+          content: url('../../assets/icons/heated.svg');
+          filter: invert(84%) sepia(82%) saturate(1476%) hue-rotate(359deg)
+            brightness(102%) contrast(104%);
+        }
+      }
+    }
+  }
+}

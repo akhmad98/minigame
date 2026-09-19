@@ -1,4 +1,4 @@
-import type { GameCard } from "../interfaces/IGameCard";
+import type { GameCard } from "../interfaces/game-card.interface";
 import { getElementGenericly } from "../utils/getSelector";
 
 export class Carousel {
@@ -24,20 +24,22 @@ export class Carousel {
 
         this.renderCards();
 
-        if (this.cardsData.length > 1) {
-            this.setupScrollListener();
-            setTimeout(() => this.scrollToCard(1), 100);
+        if (!(this.cardsData.length > 1)) {
+        	return;
         }
+
+        this.setupScrollListener();
+        setTimeout(() => this.scrollToCard(1), 100);
     }
 
     private renderCards(): void {
-        this.targetTrack.innerHTML = '';
-        this.cardsData.forEach((card) => {
-            const cardEl: HTMLDivElement = document.createElement('div');
-            cardEl.classList.add('carasoul-card');
-            cardEl.classList.add('side');
+        this.targetTrack.replaceChildren();
 
-            cardEl.innerHTML = `
+        for (const card of this.cardsData) {
+            const cardElement: HTMLDivElement = document.createElement('div');
+            cardElement.classList.add('carasoul-card', 'side');
+
+            cardElement.innerHTML = `
                 <div class="card-content">
                     <img src="../..${card.cardImage}" alt="${card.name}" loading="lazy">
                     <div class="card-info">
@@ -54,28 +56,31 @@ export class Carousel {
                 </div>
             `;
 
-            cardEl.addEventListener('click', () => {
-                const ind: number = this.cardsElement.indexOf(cardEl);
+            cardElement.addEventListener('click', () => {
+                const ind: number = this.cardsElement.indexOf(cardElement);
                 this.scrollToCard(ind);
             });
 
-            this.targetTrack.appendChild(cardEl);
-            this.cardsElement.push(cardEl);
-        });
+            this.targetTrack.append(cardElement);
+            this.cardsElement.push(cardElement);
+        }
     }
 
     private setupScrollListener(): void {
         let isTicked: boolean = false;
 
         this.targetContainer.addEventListener('scroll', (): void => {
-            if (!isTicked) {
-                window.requestAnimationFrame(() => {
-                    this.updateActiveCard();
-                    isTicked = false;
-                });
-
-                isTicked = true;
+            if (isTicked) {
+            	return;
             }
+
+            // window.requestAnimationFrame(() => {
+            //     this.updateActiveCard();
+            //     isTicked = false;
+            // });
+
+            this.updateActiveCard();
+            isTicked = true;
         });
     }
 
@@ -84,29 +89,31 @@ export class Carousel {
         let closestCardIndex = 0;
         let minDistance = Infinity;
 
-        this.cardsElement.forEach((card, ind) => {
+        for (const [index, card] of this.cardsElement.entries()) {
             document.addEventListener('click', () => {
                 console.log('hey')
             })
             const cardRect = card.getBoundingClientRect();
             const cardCenter = cardRect.left + cardRect.width / 2;
-            const dist = Math.abs(centeredContainer - cardCenter);
+            const distribution = Math.abs(centeredContainer - cardCenter);
 
-            if (dist < minDistance) {
-                minDistance = dist;
-                closestCardIndex = ind;
+            if (!(distribution < minDistance)) {
+            	continue;
             }
-        });
 
-        this.cardsElement.forEach((card, ind) => {
-            if (ind === closestCardIndex) {
+            minDistance = distribution;
+            closestCardIndex = index;
+        }
+
+        for (const [index, card] of this.cardsElement.entries()) {
+            if (index === closestCardIndex) {
                 card.classList.remove('side');
                 card.classList.add('active');
             } else {
                 card.classList.remove('active');
                 card.classList.add('side');
             }
-        });
+        }
     }
 
     public scrollToCard(ind: number): void {

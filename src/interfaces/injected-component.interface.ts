@@ -1,4 +1,4 @@
-export interface InjectedComponentConf {
+export interface InjectedComponentConfig {
     targetSelecctor: string,
     className: string,
     rawHTMLTemplate: string,

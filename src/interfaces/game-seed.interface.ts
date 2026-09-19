@@ -1,4 +1,4 @@
-import type { GameCard } from "./IGameCard";
+import type { GameCard } from "./game-card.interface";
 
 export interface GameSeed {
     data: Array<GameCard>,
