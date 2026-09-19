@@ -1,11 +1,11 @@
-import type { IBurgerMenuEl } from "../../src/interfaces/IBurgerMenuEl";
+import type { IBurgerMenuElement } from "../../src/interfaces/burger-menu-element.interface";
 import { getElementGenericly } from "../../src/utils/getSelector";
-import { DynamicInjector } from "../../src/classes/DynamicInjector";
+import { DynamicInjector } from "../../src/classes/dynamic-injector";
 
 export function burgerMenuToggle(): void {
     const HEADER_ACTIVE_CLASS: string = 'header_nav_active';
 
-    const burgerMenuEl: IBurgerMenuEl = {
+    const burgerMenuElement: IBurgerMenuElement = {
         navMenu: getElementGenericly<HTMLElement>('.navigate'),
         burgerTabs: getElementGenericly<HTMLButtonElement>('.hamburger-btn'),
     }
@@ -27,7 +27,7 @@ export function burgerMenuToggle(): void {
     );
 
     const toggleMenu = (isOpened: boolean): void => {
-        burgerMenuEl.navMenu.classList.toggle(HEADER_ACTIVE_CLASS, isOpened);
+        burgerMenuElement.navMenu.classList.toggle(HEADER_ACTIVE_CLASS, isOpened);
 
         if (isOpened) {
             drawerHeaderInjector.injectAsFirstChild();
@@ -37,5 +37,5 @@ export function burgerMenuToggle(): void {
         }
     }
 
-    burgerMenuEl.burgerTabs.addEventListener('click', () => toggleMenu(true));
+    burgerMenuElement.burgerTabs.addEventListener('click', () => toggleMenu(true));
 }
