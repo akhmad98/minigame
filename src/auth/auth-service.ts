@@ -5,14 +5,21 @@ export class AuthService {
     private tokenKey: string = AUTH_TOKEN;
     private liseteners: AuthCallback[] = [];
 
+
+    private notifyAll(): void {
+        const status = this.isAuthenticated();
+        for (const callback of this.liseteners) {
+            callback(status);
+        }
+    }
+
     public checkAuth(): boolean {
         let isAuthed: boolean = false;
         const checked: string | null = localStorage.getItem('authed');
         if (checked) {
             isAuthed = true;
         }
-        console.log(checked)
-        return isAuthed;
+        return isAuthed
     }
 
     public subscribe(callback: AuthCallback): void {
@@ -33,11 +40,6 @@ export class AuthService {
     public logout(): void {
         localStorage.removeItem(this.tokenKey);
         this.notifyAll();
-    }
-
-    private notifyAll(): void {
-        const status = this.isAuthenticated();
-        this.liseteners.forEach(callback => callback(status));
     }
 }
 
