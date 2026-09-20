@@ -9,7 +9,7 @@ export function headerRender() {
             <div class="header_wrapper">
                 <div class="nav_header_logo">
                     <div class="minigame_logo">
-                        <img src="../../assets/logos/brand_logo.png" alt="MiniGames Logo">
+                        <img src="assets/logos/brand_logo.png" alt="MiniGames Logo">
                         <h2 class="logo_name">MiniGames</h3>
                     </div>
                 </div>
@@ -50,5 +50,5 @@ export function headerRender() {
         </div>
         `;
 
-    body.appendChild(header);
+    body.append(header);
 }

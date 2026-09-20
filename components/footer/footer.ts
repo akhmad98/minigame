@@ -10,7 +10,7 @@ export function footerRender() {
                 <div class="footer_contain">
                     <div class="logo-text">
                         <div class="minigame_logos minigame_logo_wh">
-                            <img src="../../assets/logos/brand_logo.png" alt="MiniGames Logo">
+                            <img src="/assets/logos/brand_logo.png" alt="MiniGames Logo">
                             <h2 class="logo_name">MiniGames</h3>
                         </div>
                         <p class="footer_text">Take a short break and have fun. Hundreds of curated casual mini-games right in your web browser. No download required.</p>
