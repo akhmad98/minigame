@@ -1,7 +1,7 @@
 import './top-players.scss';
 import { createLeaderBoardTable } from '../leaderboard-table';
 import { JSON_LEADER_URL } from '@/constants/shared';
-import type { LeaderSeed } from '@/interfaces/leader-seed';
+import type { LeaderSeed } from '@/interfaces/leader-seed.interface';
 
 export async function topPlayerRender() {
     const body: HTMLBodyElement = document.body as HTMLBodyElement;

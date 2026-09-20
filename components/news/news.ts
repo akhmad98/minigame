@@ -1,4 +1,4 @@
-import type { GameSeed } from '@/interfaces/game-seed';
+import type { GameSeed } from '@/interfaces/game-seed.interface';
 import './news.scss';
 import { JSON_URL } from '@/constants/shared';
 import { Carousel } from '@/classes/caraousel';
