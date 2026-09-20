@@ -12,18 +12,35 @@ $gap: 8px;
 $size-1: 8px;
 $corner-extra-large: 24px;
 $size-3: 24px;
+$size-5: 40px;
 $corner-medium: 12px;
+$breakpoint-md: 768px;
+$breakpoint-ds-md: 1920px;
 
 // global heading h2
 .wrapper {
   display: flex;
+  width: 100%;
+  max-width: 378px;
   padding: $size-2;
   background-color: rgba(249, 248, 243, 1);
+
+  @media (min-width: #{$breakpoint-ds-md}) {
+    margin: 0 150px;
+    max-width: 1620px;
+  }
 }
 
-.form-wrapper {
+.poster-from-container {
   display: flex;
   flex-direction: column;
+  gap: $size-2;
+  align-items: center;
+
+  @media (min-width: #{$breakpoint-ds-md}) {
+    gap: $size-5;
+    flex-direction: row;
+  }
 }
 
 .poster-wrapper {
@@ -34,6 +51,16 @@ $corner-medium: 12px;
   background-position: center;
   height: 227px;
   margin: 15px 0;
+
+  @media (min-width: #{$breakpoint-md}) {
+    height: 300px;
+    background-size: cover;
+  }
+
+  @media (min-width: #{$breakpoint-ds-md}) {
+    height: 480px;
+    max-width: 680px;
+  }
 }
 
 .form-wrapper {
@@ -46,7 +73,6 @@ $corner-medium: 12px;
   padding: $size-3;
 
   .form-title {
-    margin: 0 auto;
     text-align: left;
   }
 
@@ -59,6 +85,16 @@ $corner-medium: 12px;
   .contact-link {
     text-decoration: none;
     color: $on-bg;
+  }
+
+  p {
+    @media (min-width: #{$breakpoint-ds-md}) {
+      line-height: 1.5;
+    }
+  }
+
+  @media (min-width: #{$breakpoint-ds-md}) {
+    gap: $size-2;
   }
 }
 

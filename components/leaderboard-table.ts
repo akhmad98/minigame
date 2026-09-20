@@ -1,3 +1,5 @@
+import { DESKTOP_MIN_WIN, TABLE_MIN_WIN } from "../src/constants/shared"
+
 interface IPlayer {
     rank: number,
     playerName: string,
@@ -11,6 +13,10 @@ interface IPlayer {
 export function createLeaderBoardTable(players: Array<IPlayer>): HTMLDivElement {
     const container: HTMLDivElement = document.createElement('div') as HTMLDivElement;
     container.className = 'leaderboard-container';
+    const isTablet: boolean = 
+        typeof window === 'undefined'
+        ? false
+        : window.innerWidth >= TABLE_MIN_WIN && window.innerWidth <= DESKTOP_MIN_WIN;
 
     container.innerHTML = `
         <table class="leaderboard-table">
@@ -18,6 +24,7 @@ export function createLeaderBoardTable(players: Array<IPlayer>): HTMLDivElement 
                 <tr>
                     <th>Rank</th>
                     <th>Player</th>
+                    ${(isTablet) && "<th>Games</th>"}
                     <th>Score</th>
                     <th>Streak</th>
                 </tr>
@@ -27,6 +34,7 @@ export function createLeaderBoardTable(players: Array<IPlayer>): HTMLDivElement 
     `;
 
     const tbody: HTMLElement = container.querySelector('tbody') as HTMLElement;
+    let gamesColIfTablet: HTMLElement | undefined;
     for (const player of players) {
         const row = document.createElement('tr');
 
@@ -36,7 +44,7 @@ export function createLeaderBoardTable(players: Array<IPlayer>): HTMLDivElement 
 
         const playerTd = document.createElement('td');
         playerTd.className = 'player-column';
-        
+
         const avatar = document.createElement('span');
         avatar.className = 'player-avatar';
         const namePlayer: string = player.playerName;
@@ -49,6 +57,12 @@ export function createLeaderBoardTable(players: Array<IPlayer>): HTMLDivElement 
         playerTd.append(avatar);
         playerTd.append(nameSpan);
 
+        if (isTablet) {
+            gamesColIfTablet = document.createElement('td');
+            gamesColIfTablet.className = 'games-number';
+            gamesColIfTablet.textContent = `${player.gamesPlayed}`;
+        }
+
         const scoreTd = document.createElement('td');
         scoreTd.className = 'player-score';
         scoreTd.textContent =`${player.totalScore/1000}K`;
@@ -59,6 +73,7 @@ export function createLeaderBoardTable(players: Array<IPlayer>): HTMLDivElement 
 
         row.append(rankTd);
         row.append(playerTd);
+        if (gamesColIfTablet) row.append(gamesColIfTablet);
         row.append(scoreTd);
         row.append(streakTd);
 

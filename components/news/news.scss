@@ -12,6 +12,9 @@ $likes: rgba(255, 75, 75, 1);
 $size-1: 8px;
 $size-2: 16px;
 $label-medium: 12px;
+$breakpoint-md: 768px;
+$breakpoint-sm-max: 767px;
+$breakpoint-ds-md: 1920px;
 
 $container-visible-width: $card-active-width + ($card-side-width * 2) +
   ($gap * 2);
@@ -20,29 +23,51 @@ $container-visible-width: $card-active-width + ($card-side-width * 2) +
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
   gap: $gap;
+  width: 100%;
   max-width: calc(#{$container-visible-width} + 120px);
+  padding: 16px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  $breakpoint-ds-md: 1920px;
+
+  @media (min-width: #{$breakpoint-md}) {
+    max-width: calc(#{$container-visible-width} + 410px);
+    padding: 30px !important;
+  }
+
+  @media (min-width: #{$breakpoint-ds-md}) {
+    max-width: calc(#{$container-visible-width} + 100px);
+  }
 }
 
 .caraousel-container {
   position: relative;
-  width: $container-visible-width;
-  max-width: 100%;
+  width: 100%;
+  max-width: $container-visible-width;
   overflow: hidden;
+  margin: 0 auto;
+
+  @media (min-width: #{$breakpoint-md}) {
+    max-width: calc(#{$container-visible-width} + 330px);
+  }
 }
 .caraousel-track {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: $gap-track;
   width: max-content;
   padding-left: 4px;
   padding-right: 4px;
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+  @media (max-width: #{$breakpoint-md}) {
+    gap: calc(#{$gap-track} + 4px);
+  }
 }
 
 .carasoul-card {
+  width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -58,20 +83,26 @@ $container-visible-width: $card-active-width + ($card-side-width * 2) +
     transform 0.4s ease,
     opacity 0.4s ease;
 
+  .meta {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
   &.side {
     width: $card-side-width;
     transform: scaleY(0.85);
     opacity: 0.75;
 
-    .meta {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 0.2s ease;
-    }
-
     .card-title {
       overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    @media (min-width: #{$breakpoint-md}) {
+      width: calc(#{$card-side-width} * 2);
     }
   }
 
@@ -85,6 +116,14 @@ $container-visible-width: $card-active-width + ($card-side-width * 2) +
       visibility: visible;
       transition: opacity 0.4s ease 0.1s;
     }
+
+    @media (min-width: #{$breakpoint-md}) {
+      width: calc(#{$card-active-width} * 2);
+    }
+  }
+
+  @media (min-width: #{$breakpoint-md}) {
+    height: calc(#{$card-height} + 80px);
   }
 }
 
@@ -153,7 +192,4 @@ $container-visible-width: $card-active-width + ($card-side-width * 2) +
     gap: $gap-small;
     align-items: center;
   }
-}
-
-@container (max-width: #{$card-side-width}) {
 }

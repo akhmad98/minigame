@@ -5,6 +5,7 @@ $primary-link-color: rgba(255, 208, 43, 1);
 $white: rgba(255, 255, 255, 1);
 $hero-cover: rgba(30, 27, 58, 0.65);
 $text-color: rgba(95, 93, 117, 1);
+$bg: rgba(249, 248, 243, 1);
 
 * {
   box-sizing: border-box;
@@ -13,7 +14,7 @@ $text-color: rgba(95, 93, 117, 1);
 }
 
 body {
-  background-color: $primary-color;
+  background-color: $secondary-color;
   border: none;
 }
 

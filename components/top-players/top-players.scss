@@ -7,12 +7,21 @@ $outline: rgba(229, 231, 235, 1);
 $bg: rgba(249, 248, 243, 1);
 $gap: 8px;
 $size-1: 8px;
+$breakpoint-md: 768px;
+$breakpoint-ds-md: 1920px;
 
 // global heading h2
 .wrapper {
   display: flex;
+  width: 100%;
+  max-width: 378px;
   padding: $size-2;
   background-color: rgba(249, 248, 243, 1);
+
+  @media (min-width: #{$breakpoint-ds-md}) {
+    margin: 0 150px;
+    max-width: 1620px;
+  }
 }
 
 .global-heading {
@@ -39,12 +48,16 @@ $size-1: 8px;
 
 .leaderboard-container {
   width: 100%;
-  max-width: 378px;
+  max-width: 768px;
   border: 2.5px solid $on-primary;
   box-shadow: 4px 4px 0 0 $on-primary;
   border-radius: $size-2;
   background-color: transparent;
   overflow: hidden;
+
+  @media (min-width: #{$breakpoint-ds-md}) {
+    max-width: 1620px;
+  }
 }
 
 .rank-column {
@@ -102,6 +115,27 @@ $size-1: 8px;
       font-size: $body-samll;
       text-transform: uppercase;
       color: $white;
+    }
+  }
+
+  @media (max-width: #{$breakpoint-md}) {
+    th,
+    td {
+      &:nth-child(1) {
+        width: 20%;
+      }
+      &:nth-child(2) {
+        width: 20%;
+      }
+      &:nth-child(3) {
+        width: 20%;
+      }
+      &:nth-child(4) {
+        width: 20%;
+      }
+      &:nth-child(5) {
+        width: 20%;
+      }
     }
   }
 
