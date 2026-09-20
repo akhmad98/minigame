@@ -1,0 +1,109 @@
+$on-primary: rgba(36, 33, 69, 1);
+$size-2: 12px;
+$white: rgba(255, 255, 255, 1);
+$body-samll: 14px;
+$tertiary: rgba(58, 46, 191, 1);
+$outline: rgba(229, 231, 235, 1);
+$bg: rgba(249, 248, 243, 1);
+$on-bg: rgba(95, 93, 117, 1);
+$primary: rgba(255, 208, 43, 1);
+$button-hover: #e5bb00;
+$gap: 8px;
+$size-1: 8px;
+$corner-extra-large: 24px;
+$size-3: 24px;
+$corner-medium: 12px;
+
+// global heading h2
+.wrapper {
+  display: flex;
+  padding: $size-2;
+  background-color: rgba(249, 248, 243, 1);
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.poster-wrapper {
+  width: 100%;
+  border-radius: $corner-extra-large;
+  background-image: url('../../assets/images/illustration-side.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 227px;
+  margin: 15px 0;
+}
+
+.form-wrapper {
+  height: auto;
+  border: 2px solid $on-primary;
+  border-radius: $corner-extra-large;
+  display: flex;
+  flex-direction: column;
+  gap: $size-2;
+  padding: $size-3;
+
+  .form-title {
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .submission-form {
+    display: flex;
+    flex-direction: column;
+    gap: $size-2;
+  }
+
+  .contact-link {
+    text-decoration: none;
+    color: $on-bg;
+  }
+}
+
+.input-wrap {
+  display: inline-flex;
+
+  .hidden-file-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  .submit-btn-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $gap;
+    box-shadow: 0 10px 20 -10 rgba(0, 0, 0, 0.1);
+    background-color: $primary;
+    color: $on-primary;
+    padding: $size-1 $size-2;
+    border-radius: $corner-medium;
+    border: 2px solid $on-primary;
+    cursor: pointer;
+    user-select: none;
+    transition:
+      background-color 0.2s ease,
+      transform 0.1s ease;
+
+    .upload-icon {
+      display: flex;
+      padding: 2px;
+    }
+  }
+
+  .submit-btn-label:hover {
+    background-color: $button-hover;
+  }
+
+  .submit-btn-label:active {
+    transform: scale(0.98);
+  }
+}
