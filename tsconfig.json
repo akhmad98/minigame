@@ -1,7 +1,6 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    // "ignoreDeprecations": "6.0",
     // File Layout
     "rootDir": "./",
     "outDir": "./dist",
@@ -48,9 +47,9 @@
     // "verbatimModuleSyntax": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "src/*": ["./src/*"]
     }
   },
   "include": ["pages/**/*.ts", "src/**/*", "vite.config.ts", "components/**/*"]
