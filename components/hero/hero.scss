@@ -5,6 +5,12 @@ $primary-link-color: rgba(255, 208, 43, 1);
 $white: rgba(255, 255, 255, 1);
 $hero-cover: rgba(30, 27, 58, 0.65);
 $text-color: rgba(95, 93, 117, 1);
+$breakpoint-md: 768px;
+$breakpoint-ds-md: 1920px;
+$display-large: 56px;
+$body-large: 18px;
+$medium: 500;
+$size-3: 24px;
 
 .hero {
   background:
@@ -14,14 +20,22 @@ $text-color: rgba(95, 93, 117, 1);
   width: 100%;
   min-height: 60vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   color: $hero-cover;
-  padding: 20px;
+  padding: 30px;
 }
 
 .hero_wrapper {
   width: 100%;
+  max-width: 378px;
+  gap: $size-3;
+
+  @media (min-width: #{$breakpoint-ds-md}) {
+    margin: 0 150px;
+    max-width: 1620px;
+  }
 }
 
 .hero_content {
@@ -34,6 +48,16 @@ $text-color: rgba(95, 93, 117, 1);
   border-radius: 12px;
   box-shadow: 4px 4px 0px 0px $primary-color;
   filter: drop-shadow(4px 4px 0px 0px $primary-color);
+  width: 100%;
+  max-width: 343px;
+
+  @media (min-width: #{$breakpoint-md}) {
+    max-width: 480px;
+  }
+
+  @media (min-width: #{$breakpoint-ds-md}) {
+    max-width: 640px;
+  }
 }
 
 .hero_title {
@@ -41,13 +65,23 @@ $text-color: rgba(95, 93, 117, 1);
   font-size: 24px;
   font-weight: 700;
   line-height: 1.2;
+
+  @media (min-width: #{$breakpoint-ds-md}) {
+    font-size: $display-large;
+  }
 }
 
 .hero_text {
   font-size: 12px;
-  font-weight: 500;
-  line-height: 1.4;
+  font-weight: $medium;
+  line-height: 1.5;
   color: $text-color;
+
+  @media (min-width: #{$breakpoint-ds-md}) {
+    font-size: $display-large;
+    font-size: $body-large;
+    line-height: 1.5;
+  }
 }
 
 .browse_btn {
