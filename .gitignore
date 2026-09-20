@@ -40,3 +40,5 @@ Thumbs.db
 .env.production.local
 
 assets/data
+
+vercel.json
