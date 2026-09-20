@@ -1,6 +1,6 @@
-import type { IBurgerMenuElement } from "../../src/interfaces/burger-menu-element.interface";
-import { getElementGenericly } from "../../src/utils/getSelector";
-import { DynamicInjector } from "../../src/classes/dynamic-injector";
+import type { IBurgerMenuElement } from "src/interfaces/burger-menu-element.interface";
+import { getElementGenericly } from "src/utils/getSelector";
+import { DynamicInjector } from "src/classes/dynamic-injector";
 
 export function burgerMenuToggle(): void {
     const HEADER_ACTIVE_CLASS: string = 'header_nav_active';

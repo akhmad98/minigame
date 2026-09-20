@@ -1,7 +1,7 @@
-import type { GameSeed } from '../../src/interfaces/game-seed';
+import type { GameSeed } from 'src/interfaces/game-seed';
 import './news.scss';
-import { JSON_URL } from '../../src/constants/shared';
-import { Carousel } from '../../src/classes/caraousel';
+import { JSON_URL } from 'src/constants/shared';
+import { Carousel } from 'src/classes/caraousel';
 
 export async function newsRender(): Promise<void> {
     const body: HTMLBodyElement = document.body as HTMLBodyElement;

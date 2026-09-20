@@ -5,7 +5,6 @@ export class AuthService {
     private tokenKey: string = AUTH_TOKEN;
     private liseteners: AuthCallback[] = [];
 
-
     private notifyAll(): void {
         const status = this.isAuthenticated();
         for (const callback of this.liseteners) {
@@ -19,7 +18,8 @@ export class AuthService {
         if (checked) {
             isAuthed = true;
         }
-        return isAuthed
+        console.log(checked)
+        return isAuthed;
     }
 
     public subscribe(callback: AuthCallback): void {

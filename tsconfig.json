@@ -1,6 +1,7 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
+    // "ignoreDeprecations": "6.0",
     // File Layout
     "rootDir": "./",
     "outDir": "./dist",
@@ -44,18 +45,13 @@
     // Recommended Options
     "strict": true,
     "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
+    // "verbatimModuleSyntax": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "pages/**/*.ts",
-    "src/**/*",
-    "vite.config.ts",
-    "components/header"
-  ]
+  "include": ["pages/**/*.ts", "src/**/*", "vite.config.ts", "components/**/*"]
 }
