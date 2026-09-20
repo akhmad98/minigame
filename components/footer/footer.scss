@@ -1,0 +1,214 @@
+$primary-color: rgba(36, 33, 69, 1);
+$secondary-color: rgba(249, 248, 243, 1);
+$on-bg-footer: rgba(185, 181, 201, 1);
+$primary-link-color: rgba(255, 208, 43, 1);
+$white: rgba(255, 255, 255, 1);
+$hero-cover: rgba(30, 27, 58, 0.65);
+$text-color: rgba(95, 93, 117, 1);
+$inner-trans: rgba(42, 38, 79, 1);
+$bg-footer-low: rgba(42, 38, 79, 1);
+$breakpoint-md: 768px;
+$breakpoint-ds-md: 1920px;
+$gap: 24px;
+$size-5: 24px;
+$size-2: 16px;
+$size-3: 24px;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.footer_wrapper {
+  background-color: $primary-color;
+
+  .footer_container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 16px;
+    align-items: left;
+
+    .footer_contain {
+      gap: $size-3;
+      display: flex;
+      flex-direction: column;
+
+      .logo-text {
+        display: flex;
+        flex-direction: column;
+        gap: $size-3;
+
+        .minigame_logos {
+          display: flex;
+          flex-direction: row;
+          gap: 8px;
+
+          h2 {
+            color: $white;
+            font-weight: 700;
+            line-height: 1;
+            font-size: 20px;
+          }
+        }
+
+        p {
+          color: $on-bg-footer;
+          font-size: 14px;
+          line-height: 1.5;
+          font-weight: 400;
+        }
+
+        @media (min-width: #{$breakpoint-ds-md}) {
+          flex-direction: column;
+        }
+      }
+
+      .footer_browse {
+        display: flex;
+        flex-direction: column;
+        gap: $gap;
+
+        .browser {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 40px;
+
+          @media (min-width: #{$breakpoint-md}) {
+            flex-direction: row;
+            gap: $size-5;
+          }
+        }
+
+        @media (min-width: #{$breakpoint-md}) {
+          flex-direction: row;
+          gap: $size-5;
+        }
+      }
+
+      @media (min-width: #{$breakpoint-md}) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    @media (min-width: #{$breakpoint-md}) {
+      padding: 30px !important;
+    }
+
+    @media (min-width: #{$breakpoint-ds-md}) {
+      padding: 60px 150px !important;
+    }
+  }
+}
+
+.company h2,
+.comm h2,
+.explore h2 {
+  width: 100%;
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  margin-bottom: 16px;
+}
+
+.footer_list {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 16px;
+  list-style: none;
+}
+
+.footer_link {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  color: $on-bg-footer;
+}
+
+.comm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  gap: 16px;
+}
+
+.icons a {
+  width: 32px;
+  height: 32px;
+  background-color: $inner-trans;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: none;
+}
+
+a img {
+  margin: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.footer_info {
+  border-top: 1px solid $bg-footer-low;
+}
+
+.footer_text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .self_info {
+    display: flex;
+    flex-direction: row;
+    gap: $size-2;
+    align-items: center;
+
+    .rs_logo,
+    .student_info {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+    }
+  }
+  @media (min-width: #{$breakpoint-md}) {
+    flex-direction: row;
+    gap: $size-2;
+  }
+
+  @media (min-width: #{$breakpoint-ds-md}) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer_text p,
+.rs_logo h3,
+.student_info h3 {
+  font-size: 12px;
+  font-weight: 400;
+  color: $on-bg-footer;
+}
+
+.footer_text p {
+  margin-top: 12px !important;
+}
+
+.rs_logo img,
+.student_info img {
+  width: 20px;
+  height: 20px;
+}

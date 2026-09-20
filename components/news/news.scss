@@ -1,0 +1,195 @@
+$card-active-width: 218px;
+$card-side-width: 56px;
+$card-height: 200px;
+$gap: 16px;
+$gap-small: 4px;
+$gap-track: 6px;
+$corner-large: 16px;
+$on-primary: rgba(36, 33, 69, 1);
+$white: rgba(255, 255, 255, 1);
+$primary: rgba(255, 208, 43, 1);
+$likes: rgba(255, 75, 75, 1);
+$size-1: 8px;
+$size-2: 16px;
+$label-medium: 12px;
+$breakpoint-md: 768px;
+$breakpoint-sm-max: 767px;
+$breakpoint-ds-md: 1920px;
+
+$container-visible-width: $card-active-width + ($card-side-width * 2) +
+  ($gap * 2);
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $gap;
+  width: 100%;
+  max-width: calc(#{$container-visible-width} + 120px);
+  padding: 16px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  $breakpoint-ds-md: 1920px;
+
+  @media (min-width: #{$breakpoint-md}) {
+    max-width: calc(#{$container-visible-width} + 410px);
+    padding: 30px !important;
+  }
+
+  @media (min-width: #{$breakpoint-ds-md}) {
+    max-width: calc(#{$container-visible-width} + 100px);
+  }
+}
+
+.caraousel-container {
+  position: relative;
+  width: 100%;
+  max-width: $container-visible-width;
+  overflow: hidden;
+  margin: 0 auto;
+
+  @media (min-width: #{$breakpoint-md}) {
+    max-width: calc(#{$container-visible-width} + 330px);
+  }
+}
+.caraousel-track {
+  display: flex;
+  align-items: center;
+  gap: $gap-track;
+  width: max-content;
+  padding-left: 4px;
+  padding-right: 4px;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+  @media (max-width: #{$breakpoint-md}) {
+    gap: calc(#{$gap-track} + 4px);
+  }
+}
+
+.carasoul-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  container-type: inline-size;
+  flex-shrink: 0;
+  height: $card-height;
+  border-radius: $corner-large;
+  border: 2.5px solid $on-primary;
+  overflow: hidden;
+  box-shadow: 4px 4px 0 0 $on-primary;
+  transition:
+    width 0.4s ease,
+    transform 0.4s ease,
+    opacity 0.4s ease;
+
+  .meta {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  &.side {
+    width: $card-side-width;
+    transform: scaleY(0.85);
+    opacity: 0.75;
+
+    .card-title {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    @media (min-width: #{$breakpoint-md}) {
+      width: calc(#{$card-side-width} * 2);
+    }
+  }
+
+  &.active {
+    width: $card-active-width;
+    transform: scaleY((1));
+    opacity: 1;
+
+    .meta {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.4s ease 0.1s;
+    }
+
+    @media (min-width: #{$breakpoint-md}) {
+      width: calc(#{$card-active-width} * 2);
+    }
+  }
+
+  @media (min-width: #{$breakpoint-md}) {
+    height: calc(#{$card-height} + 80px);
+  }
+}
+
+.card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: $size-1;
+  padding: $size-2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.85)
+  );
+  color: $white;
+  box-sizing: border-box;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 100%;
+  color: $white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $size-2;
+  font-size: $label-medium;
+  color: $white;
+  font-family: 700;
+
+  .rating {
+    display: inline-flex;
+    gap: $gap-small;
+    align-items: center;
+  }
+
+  .likes {
+    display: inline-flex;
+    gap: $gap-small;
+    align-items: center;
+  }
+}

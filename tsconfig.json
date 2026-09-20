@@ -1,0 +1,64 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    "ignoreDeprecations": "6.0",
+    // File Layout
+    "rootDir": "./",
+    "outDir": "./dist",
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "esnext",
+    "useDefineForClassFields": true,
+    "target": "es2022",
+    "types": ["node"],
+    // For nodejs:
+    "lib": ["ES2022", "DOM.Iterable", "DOM"],
+    "skipLibCheck": true,
+    // "types": ["node"],
+    // and npm install -D @types/node
+
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    // Other Outputs
+    // "sourceMap": true,
+    // "declaration": true,
+    // "declarationMap": true,
+
+    // Stricter Typechecking Options
+    // "noUncheckedIndexedAccess": true,
+    // "exactOptionalPropertyTypes": true,
+    "noImplicitAny": true,
+    // "alwaysStrict": true,
+
+    // Style Options
+    "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
+
+    // Recommended Options
+    "strict": true,
+    "jsx": "react-jsx",
+    // "verbatimModuleSyntax": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"],
+      "src/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "pages/**/*.ts",
+    "src/**/*",
+    "vite.config.ts",
+    "components/**/*",
+    "interfaces/**/*.ts"
+  ]
+}

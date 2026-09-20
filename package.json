@@ -1,0 +1,49 @@
+{
+  "name": "minigame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "format": "prettier --write \".**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "format:check": "prettier --check \".**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --max-warnings 0",
+    "test": "npx lint-staged",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,js}": "eslint --fix",
+    "*.{scss,css,json,md}": [
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akhmad98/minigame.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/akhmad98/minigame/issues"
+  },
+  "homepage": "https://github.com/akhmad98/minigame#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.2",
+    "eslint": "^10.10.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-unicorn": "^75.0.0",
+    "globals": "^17.12.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.5.1",
+    "prettier": "^3.9.6",
+    "sass-embedded": "^1.104.1",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.70.0",
+    "vite": "^8.3.0"
+  }
+}

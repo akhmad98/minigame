@@ -1,0 +1,25 @@
+$primary-color: rgba(36, 33, 69, 1);
+$secondary-color: rgba(249, 248, 243, 1);
+$on-bg-footer: rgba(185, 181, 201, 1);
+$primary-link-color: rgba(255, 208, 43, 1);
+$white: rgba(255, 255, 255, 1);
+$hero-cover: rgba(30, 27, 58, 0.65);
+$text-color: rgba(95, 93, 117, 1);
+$bg: rgba(249, 248, 243, 1);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $secondary-color;
+  border: none;
+}
+
+.header_nav_logo_active {
+}
+
+.close-btn {
+}
