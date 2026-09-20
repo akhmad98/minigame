@@ -1,4 +1,4 @@
-import { DESKTOP_MIN_WIN, TABLE_MIN_WIN } from "../src/constants/shared"
+import { DESKTOP_MIN_WIN, TABLE_MIN_WIN } from "src/constants/shared"
 
 interface IPlayer {
     rank: number,
