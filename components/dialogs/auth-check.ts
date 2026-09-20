@@ -1,4 +1,4 @@
-import { authService } from 'src/auth/auth-service';
+import { authService } from '@/auth/auth-service';
 
 
 export function checkAuthActions(): void {
