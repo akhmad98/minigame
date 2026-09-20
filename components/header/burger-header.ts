@@ -17,7 +17,7 @@ export function burgerMenuToggle(): void {
             closeTriggerEl: '.close-btn',
             rawHTMLTemplate: `
                 <div class="minigame_logos minigame_logo_wh">
-                    <img src="../../assets/logos/brand_logo.png" alt="MiniGames Logo">
+                    <img src="/assets/logos/brand_logo.png" alt="MiniGames Logo">
                     <h2 class="logo_name logo_name_wh">MiniGames</h2>
                 </div>
                 <button class="close-btn" aria-label="Close menu">×</button>
