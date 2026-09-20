@@ -6,13 +6,28 @@ import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 
 export default tseslint.config(
   { ignores: ['dist', 'node_modules'] },
-  eslintPluginUnicorn.configs['flat/recommended'],
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
-    files: ['**/*.{ts,js}'],
+    plugins: {
+        unicorn: eslintPluginUnicorn,
+    },
+    rules: {
+         ...eslintPluginUnicorn.configs['flat/recommended'].rules,
+         'unicorn/prevent-abbreviations': 'off',
+         'unicorn/no-useless-template-literals': 'off',
+    }
+  },
+  {
+    files: ['src/**/*.{ts,js}', 'pages/**/*.{ts,js}', 'components/**/*.{ts,js}'],
     languageOptions: {
       ecmaVersion: 2022,
+      sourceType: 'module',
       globals: globals.browser,
+      parserOptions: {
+        tsconfigRootDir: import.meta.dirname,
+        project: ['./tsconfig.json'],
+      },
     },
     linterOptions: {
         noInlineConfig: true,
@@ -20,6 +35,17 @@ export default tseslint.config(
     rules: {
         '@typescript-eslint/no-explicit-any': 'error',
     },
+  },
+  {
+    files: ['*.config.js', 'vite.config.ts'],
+    languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: 'module',
+      globals: globals.node,
+    },
+    rules: {
+
+    }
   },
   eslintConfigPrettier
 );
