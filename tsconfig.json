@@ -54,5 +54,11 @@
       "src/*": ["./src/*"]
     }
   },
-  "include": ["pages/**/*.ts", "src/**/*", "vite.config.ts", "components/**/*"]
+  "include": [
+    "pages/**/*.ts",
+    "src/**/*",
+    "vite.config.ts",
+    "components/**/*",
+    "interfaces/**/*.ts"
+  ]
 }
