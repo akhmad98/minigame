@@ -41,15 +41,15 @@ export class Carousel {
 
             cardElement.innerHTML = `
                 <div class="card-content">
-                    <img src="../..${card.cardImage}" alt="${card.name}" loading="lazy">
+                    <img src="${card.cardImage}" alt="${card.name}" loading="lazy">
                     <div class="card-info">
                         <h3 class="card-title">${card.shortDescription}</h3>
                         <div class="meta">
                             <span class="rating">
-                                <img src="../../assets/icons/star.svg" alt="Star">
+                                <img src="/assets/icons/star.svg" alt="Star">
                             ${card.rating}</span>
                             <span class="likes">
-                                <img src="../../assets/icons/fav.svg" alt="Fav" class="ic">${card.likesCount}  
+                                <img src="/assets/icons/fav.svg" alt="Fav" class="ic">${card.likesCount}  
                             </span>
                         </div>
                     </div>
