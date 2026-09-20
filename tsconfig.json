@@ -47,8 +47,9 @@
     // "verbatimModuleSyntax": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./*"],
       "src/*": ["./src/*"]
     }
   },
