@@ -59,10 +59,10 @@ export function footerRender() {
                         <div class="comm">
                             <h2>Community</h2>
                             <div class="icons">
-                                <a href=""><img src="../../assets/icons/share.svg" alt="Share" /></a>
+                                <a href=""><img src="/assets/icons/share.svg" alt="Share" /></a>
                                 
-                                <a href=""><img src="../../assets/icons/feed.svg" alt="Feedback" /></a>
-                                <a href=""><img src="../../assets/icons/rss.svg" alt="RSS FEED" /></a>
+                                <a href=""><img src="/assets/icons/feed.svg" alt="Feedback" /></a>
+                                <a href=""><img src="/assets/icons/rss.svg" alt="RSS FEED" /></a>
                             </div>
                         </div>
                     </div>
